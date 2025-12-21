@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RETROVAULT • Play Classic Games</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 RETROVAULT</h1>
+    <p>Upload your own ROMs to play. All emulation runs in your browser.</p>
+  </header>
+
+  <main>
+    <div id="system-select" class="panel">
+      <h2>Select a System</h2>
+      <div class="systems-grid" id="systemsGrid"></div>
+    </div>
+
+    <div id="emulator-container" class="panel hidden">
+      <div id="emulator-screen"></div>
+	<div id="touch-controls" class="hidden">
+  <!-- D-Pad -->
+  <div class="dpad">
+    <button id="btn-up">↑</button>
+    <div class="dpad-row">
+      <button id="btn-left">←</button>
+      <button id="btn-down">↓</button>
+      <button id="btn-right">→</button>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button id="btn-a">A</button>
+    <button id="btn-b">B</button>
+    <button id="btn-start">Start</button>
+    <button id="btn-select">Select</button>
+  </div>
+</div>y
+      <div class="controls">
+        <button id="back-btn">← Back to Systems</button>
+        <button id="load-rom-btn">📁 Load ROM</button>
+        <input type="file" id="rom-input" accept="*" hidden />
+        <button id="fullscreen-btn">⛶ Fullscreen</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="emulator/emulator.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

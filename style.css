@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+}
+
+:root {
+  --bg: #0f0f1b;
+  --panel: #1a1a2e;
+  --accent: #00ffcc;
+  --text: #e6e6ff;
+  --hover: #005544;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, var(--accent), #ff00aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.systems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.system-card {
+  background: rgba(0, 30, 30, 0.6);
+  border: 2px solid #006655;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.system-card:hover {
+  background: var(--hover);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.system-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+#emulator-screen {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: black;
+  margin-bottom: 1rem;
+  border: 2px solid #333;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background: #003322;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--hover);
+}
+/* Touch Controls (Mobile Only) */
+#touch-controls {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dpad-row {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#touch-controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  background: rgba(0, 50, 40, 0.8);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#touch-controls button:active {
+  background: var(--accent);
+  color: #000;
+  transform: scale(0.95);
+}
+
+/* Responsive: Stack on very small screens */
+@media (max-width: 480px) {
+  #touch-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
